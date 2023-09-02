@@ -1,12 +1,12 @@
-import { network, ethers } from "hardhat"
-import {
+const { network, ethers } = require("hardhat")
+const {
     networkConfig,
     developmentChains,
     VERIFICATION_BLOCK_CONFIRMATIONS,
-} from("../helper-hardhat-config")  
+} = require("../helper-hardhat-config")
 
 // import verify from "../utils/Verify"
-const FUND_AMOUNT = ethers.utils.parseEther("1") // 1 Ether, or 1e18 (10^18) Wei
+const FUND_AMOUNT = ethers.parseEther("1") // 1 Ether, or 1e18 (10^18) Wei
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments

@@ -1,5 +1,5 @@
 Arguments: 
-  /opt/homebrew/Cellar/node/19.6.0/bin/node /opt/homebrew/bin/yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers @nomiclabs/hardhat-etherscan @nomiclabs/hardhat-waffle chai ethereum-waffle hardhat hardhat-contract-sizer hardhat-deploy hardhat-gas-reporter prettier prettier-plugin-solidity solhint solidity-coverage dotenv @typechain/ethers-v5 @typechain/hardhat @types/chai @types/node ts-node typechain typescript
+  /opt/homebrew/Cellar/node/19.6.0/bin/node /opt/homebrew/bin/yarn add --dev hardhat-toolbox
 
 PATH: 
   /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/homebrew/bin:/opt/homebrew/sbin
@@ -14,15 +14,55 @@ Platform:
   darwin arm64
 
 Trace: 
-  SyntaxError: /Users/sudhanshu/develop/hardhat-local/hardhat-lottery/package.json: Unexpected end of JSON input
-      at JSON.parse (<anonymous>)
-      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:1629:59
-      at Generator.next (<anonymous>)
-      at step (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:310:30)
-      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/hardhat-toolbox: Not found
+      at params.callback [as _callback] (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:512:28)
+      at Request.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:512:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:626:28)
+      at IncomingMessage.emit (node:events:524:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 
 npm manifest: 
-  
+  {
+    "devDependencies": {
+      "@chainlink/contracts": "^0.6.1",
+      "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
+      "@nomicfoundation/hardhat-ethers": "^3.0.0",
+      "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+      "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+      "@nomiclabs/hardhat-etherscan": "^3.1.7",
+      "@typechain/ethers-v5": "^11.1.1",
+      "@typechain/ethers-v6": "^0.4.0",
+      "@typechain/hardhat": "^9.0.0",
+      "@types/chai": "^4.3.5",
+      "@types/mocha": ">=9.1.0",
+      "@types/node": "^20.5.3",
+      "chai": "^4.3.7",
+      "dotenv": "^16.3.1",
+      "ethereum-waffle": "^4.0.10",
+      "ethers": "^6.7.1",
+      "hardhat": "^2.17.1",
+      "hardhat-contract-sizer": "^2.10.0",
+      "hardhat-deploy": "^0.11.37",
+      "hardhat-gas-reporter": "^1.0.9",
+      "prettier": "^3.0.2",
+      "prettier-plugin-solidity": "^1.1.3",
+      "solhint": "^3.6.2",
+      "solidity-coverage": "^0.8.4",
+      "ts-node": "^10.9.1",
+      "typechain": "^8.3.1",
+      "typescript": "^5.1.6"
+    },
+    "dependencies": {
+      "global": "^4.4.0",
+      "hardhat-shorthand": "^1.0.0",
+      "run": "^1.4.0"
+    }
+  }
 
 yarn manifest: 
   No manifest

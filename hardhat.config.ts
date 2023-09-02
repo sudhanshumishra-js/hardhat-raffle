@@ -1,10 +1,11 @@
+import "@typechain/hardhat"
+import "@nomiclabs/hardhat-waffle"
 import "@nomiclabs/hardhat-etherscan"
-import "hardhat-deploy"
-import "solidity-coverage"
+import "@nomiclabs/hardhat-ethers"
 import "hardhat-gas-reporter"
-// import "ethereum-waffle"
-// import "@nomicfoundation/hardhat-toolbox"
 import "dotenv/config"
+import "solidity-coverage"
+import "hardhat-deploy"
 
 const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
