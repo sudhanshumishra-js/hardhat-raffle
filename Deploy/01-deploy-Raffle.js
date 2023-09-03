@@ -4,9 +4,9 @@ const {
     developmentChains,
     VERIFICATION_BLOCK_CONFIRMATIONS,
 } = require("../helper-hardhat-config")
+const { verify } = require("../utils/verify")
 
-// import verify from "../utils/Verify"
-const FUND_AMOUNT = ethers.parseEther("1") // 1 Ether, or 1e18 (10^18) Wei
+const FUND_AMOUNT = ethers.utils.parseEther("1") // 1 Ether, or 1e18 (10^18) Wei
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
@@ -33,7 +33,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         : VERIFICATION_BLOCK_CONFIRMATIONS
 
     log("----------------------------------------------------")
-    const deployArguments = [
+    const arguments = [
         vrfCoordinatorV2Address,
         subscriptionId,
         networkConfig[chainId]["gasLane"],
@@ -43,7 +43,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     ]
     const raffle = await deploy("Raffle", {
         from: deployer,
-        args: deployArguments,
+        args: arguments,
         log: true,
         waitConfirmations: waitBlockConfirmations,
     })
@@ -57,7 +57,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     // Verify the deployment
     if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
         log("Verifying...")
-        // await verify(raffle.address, arguments)
+        await verify(raffle.address, arguments)
     }
 
     log("Enter lottery with command:")
